@@ -1,5 +1,5 @@
 <h1 align="center">
-   First project with NodeJS
+   GoBarber
 </h1>
 
 <h3 align="center">
