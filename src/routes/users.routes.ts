@@ -21,9 +21,15 @@ usersRouter.post('/', async (request, response) => {
     password,
   });
 
-  delete user.password;
+  const userWithoutPassword = {
+    id: user.id,
+    name: user.name,
+    email: user.email,
+    created_at: user.created_at,
+    updated_at: user.updated_at,
+  };
 
-  return response.json(user);
+  return response.json(userWithoutPassword);
 });
 
 usersRouter.patch(
@@ -38,9 +44,15 @@ usersRouter.patch(
       avatarFilename: request.file.filename,
     });
 
-    delete user.password;
+    const userWithoutPassword = {
+      id: user.id,
+      name: user.name,
+      email: user.email,
+      created_at: user.created_at,
+      updated_at: user.updated_at,
+    };
 
-    return response.json(user);
+    return response.json(userWithoutPassword);
   }
 );
 
